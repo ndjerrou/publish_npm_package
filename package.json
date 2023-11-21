@@ -1,0 +1,16 @@
+{
+  "name": "1-temperature",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calcTemperature.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  }
+}
