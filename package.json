@@ -1,8 +1,8 @@
 {
-  "name": "1-temperature",
-  "version": "1.0.0",
+  "name": "ndjerrou_temp",
+  "version": "5.0.0",
   "description": "",
-  "main": "calcTemperature.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.2",
-    "dotenv": "^16.3.1"
+    "axios": "^1.6.2"
   }
 }

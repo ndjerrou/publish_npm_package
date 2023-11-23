@@ -1,18 +1,20 @@
-require('dotenv').config();
 const calcTemperature = require('./calcTemperature');
 const geocode = require('./geocode');
 
-async function main() {
-  const city = process.argv[2] || 'Puteaux';
-
+async function main(city = 'Puteaux', keyAPiOpenWeatherMap) {
+  if (!keyAPiOpenWeatherMap)
+    throw new Error('API key for openweathermap APi not provided');
   try {
-    const { lat, lg } = await geocode(city);
-    const temperature = await calcTemperature({ lat, lg });
-
-    console.log(`temperature à ${city} = ${temperature}°`);
+    const { lat, lg } = await geocode(city, keyAPiOpenWeatherMap);
+    return await calcTemperature({ lat, lg });
   } catch (err) {
     console.error(err.message);
+    process.exit(1);
   }
 }
 
-main();
+module.exports = {
+  async getTemperature(city, keyAPiOpenWeatherMap) {
+    return await main(city, keyAPiOpenWeatherMap);
+  },
+};
