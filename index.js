@@ -1,7 +1,7 @@
 const calcTemperature = require('./calcTemperature');
 const geocode = require('./geocode');
 
-async function main(city = 'Puteaux', keyAPiOpenWeatherMap) {
+async function getTemperature(city = 'Puteaux', keyAPiOpenWeatherMap) {
   if (!keyAPiOpenWeatherMap)
     throw new Error('API key for openweathermap APi not provided');
   try {
@@ -14,7 +14,5 @@ async function main(city = 'Puteaux', keyAPiOpenWeatherMap) {
 }
 
 module.exports = {
-  async getTemperature(city, keyAPiOpenWeatherMap) {
-    return await main(city, keyAPiOpenWeatherMap);
-  },
+  getTemperature,
 };
