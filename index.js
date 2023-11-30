@@ -16,7 +16,3 @@ async function getTemperature(city = 'Puteaux', keyAPiOpenWeatherMap) {
 module.exports = {
   getTemperature,
 };
-
-// nodejs's project
-
-('pwd /');
