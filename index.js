@@ -6,7 +6,7 @@ async function getTemperature(city = 'Puteaux', keyAPiOpenWeatherMap) {
     throw new Error('API key for openweathermap APi not provided');
   try {
     const { lat, lg } = await geocode(city, keyAPiOpenWeatherMap);
-    return await calcTemperature({ lat, lg });
+    return calcTemperature({ lat, lg });
   } catch (err) {
     console.error(err.message);
     process.exit(1);
@@ -16,3 +16,7 @@ async function getTemperature(city = 'Puteaux', keyAPiOpenWeatherMap) {
 module.exports = {
   getTemperature,
 };
+
+// nodejs's project
+
+('pwd /');
